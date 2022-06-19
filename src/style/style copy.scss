@@ -1,0 +1,155 @@
+@import "./reset.scss";
+@import "./basic.scss";
+
+header {
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  position: fixed;
+  z-index: 2;
+  background-color: var(--body-bg);
+}
+
+.navbar-toggle {
+  position: absolute;
+  visibility: hidden;
+}
+
+.navbar-toggle-label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  display: flex;
+  align-items: center;
+
+  .hamburger {
+    position: relative;
+    width: 20px;
+    height: 3px;
+    background-color: var(--font-main-color);
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: var(--font-main-color);
+      position: absolute;
+      height: 3px;
+      left: 0;
+    }
+
+    &::before {
+      top: 10px;
+      width: 16px;
+    }
+
+    &::after {
+      bottom: 10px;
+      width: 24px;
+    }
+  }
+}
+
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  margin: 0 auto;
+  height: 24px;
+  width: 136px;
+  background: var(--logo-url);
+  background-size: 136px 24px;
+  background-size: 100% 100%;
+}
+
+.nav {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  background-color: var(--body-bg);
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-item {
+  width: 100%;
+  margin-bottom: 48px;
+  position: relative;
+
+  .nav-link {
+    color: var(--font-main-color);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    display: block;
+    width: 346px;
+    height: 2px;
+    background-color: var(--font-second-color);
+    margin: 0 10px;
+    opacity: 0.1;
+  }
+}
+
+.nav-tool-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 1rem;
+}
+
+.navbar-toggle:checked ~ .nav {
+  transform: scale(1, 1);
+}
+
+.navbar-toggle:checked ~ .nav .nav-item {
+  opacity: 1;
+  transition: opacity 0.2s ease-out 0.15s;
+}
+
+@media screen and (min-width: 375px) {
+  .hamburger,
+  .nav-item::after {
+    display: none;
+  }
+
+  header,
+  .nav,
+  .nav-item {
+    all: unset;
+  }
+
+  header {
+    height: 60px;
+  }
+
+  .brand-logo {
+    height: 30px;
+    width: 169.83px;
+    background-size: 169.83px 30px;
+  }
+
+  .nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .nav-list {
+      position: absolute;
+      left: 0;
+      display: grid;
+      grid-auto-flow: column;
+      gap: 32px;
+    }
+
+    .nav-tool {
+      position: absolute;
+      right: 0;
+    }
+  }
+}

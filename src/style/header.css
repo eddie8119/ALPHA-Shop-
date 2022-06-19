@@ -1,0 +1,205 @@
+@charset "UTF-8";
+header {
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  position: fixed;
+  z-index: 2;
+  background-color: var(--main-white-color);
+}
+
+.navbar-toggle {
+  position: absolute;
+  visibility: hidden;
+}
+
+.navbar-toggle-label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-toggle-label .hamburger {
+  position: relative;
+  width: 20px;
+  height: 3px;
+  background-color: var(--main-black-color);
+}
+
+.navbar-toggle-label .hamburger::before, .navbar-toggle-label .hamburger::after {
+  content: "";
+  background-color: var(--main-black-color);
+  position: absolute;
+  height: 3px;
+  left: 0;
+}
+
+.navbar-toggle-label .hamburger::before {
+  top: 10px;
+  width: 16px;
+}
+
+.navbar-toggle-label .hamburger::after {
+  bottom: 10px;
+  width: 24px;
+}
+
+.logo-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.brand-logo {
+  margin: 0 auto;
+  height: 24px;
+  width: 136px;
+  background: var(--logo-url);
+  background-size: 100% 100%;
+}
+
+.logo-container-computer {
+  display: none;
+}
+
+.nav {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  background-color: var(--main-white-color);
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.nav-item {
+  width: 100%;
+  margin-bottom: 48px;
+  position: relative;
+  opacity: 0;
+}
+
+.nav-item .nav-link {
+  color: var(--main-black-color);
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  display: block;
+  width: 346px;
+  height: 2px;
+  background-color: var(--main-gray-color);
+  margin: 0 10px;
+  opacity: 0.1;
+}
+
+.nav-tool-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 1rem;
+  opacity: 0;
+}
+
+.navbar-toggle:checked ~ .nav {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.navbar-toggle:checked ~ .nav .nav-item,
+.navbar-toggle:checked ~ .nav .nav-tool-icon {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease-out 0.15s;
+  transition: opacity 0.2s ease-out 0.15s;
+}
+
+/*桌機*/
+@media screen and (min-width: 375px) {
+  .hamburger,
+  .nav-item::after,
+  .logo-container {
+    display: none;
+  }
+  header,
+  .nav,
+  .nav-item {
+    all: unset;
+  }
+  header {
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .logo-container-computer {
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 2;
+    grid-column: 8/10;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .brand-logo-computer {
+    height: 30px;
+    width: 169.83px;
+    background: var(--logo-url);
+    background-size: 100% 100%;
+  }
+  .nav {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[16];
+        grid-template-columns: repeat(16, 1fr);
+  }
+  .nav .nav-item {
+    opacity: 1;
+  }
+  .nav .nav-list {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+    grid-column: 3/7;
+  }
+  .nav .nav-list .nav-link {
+    margin-right: 16px;
+  }
+  .nav .nav-tool {
+    -ms-grid-column: 13;
+    -ms-grid-column-span: 2;
+    grid-column: 13/15;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav .nav-tool .nav-tool-icon {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=header.css.map */
