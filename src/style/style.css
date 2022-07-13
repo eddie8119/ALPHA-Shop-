@@ -99,7 +99,6 @@ input:invalid {
 }
 
 /*數字迴圈*/
-/*桌機版面邊寬*/
 /*input-style*/
 .form-row .select-wrapper select, input {
   font-size: 0.75rem;
@@ -695,6 +694,10 @@ input:invalid {
   display: none;
 }
 
+.v-hidden {
+  visibility: hidden;
+}
+
 header {
   width: 100%;
   height: 56px;
@@ -918,33 +921,31 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shipping-step-container .connect-line {
+  height: 1px;
+  width: 60px;
+  background: var(--main-gray-color);
 }
 
 .shipping-step {
   text-align: center;
-  position: relative;
 }
 
 .shipping-step:nth-child(1) .step-circle-container::after {
   content: "1";
 }
 
-.shipping-step:nth-child(2) .step-circle-container::after {
+.shipping-step:nth-child(3) .step-circle-container::after {
   content: "2";
 }
 
-.shipping-step:nth-child(3) .step-circle-container::after {
+.shipping-step:nth-child(5) .step-circle-container::after {
   content: "3";
-}
-
-.shipping-step .connect-line {
-  display: block;
-  position: absolute;
-  top: 50%;
-  height: 1px;
-  border: 1px solid var(--main-gray-color);
-  width: 137.5%;
-  right: 64px;
 }
 
 .shipping-step .step-circle-container {
@@ -1242,7 +1243,11 @@ input[type="text"] {
 
 .page-control-btn {
   width: 100%;
-  height: 72px;
+}
+
+.page-control-btn .page-btn-container {
+  width: 100%;
+  border-top: 1px solid var(--main-gray-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1255,23 +1260,16 @@ input[type="text"] {
           justify-content: space-between;
 }
 
-.page-control-btn .page-btn-container {
-  width: 100%;
-  border-top: 1px solid var(--main-gray-color);
-}
-
-.page-control-btn .page-before,
-.page-control-btn .page-next {
+.page-control-btn .page-btn {
   margin-top: 24px;
+  height: 46px;
 }
 
-.page-control-btn .page-before {
+.page-control-btn .page-before-desk {
   display: none;
 }
 
 .page-control-btn .page-next {
-  width: 100%;
-  height: 46px;
   border-radius: 8px;
   background-color: var(--main-pink-color);
   color: var(--main-white-color);
@@ -1311,10 +1309,6 @@ input[type="text"] {
   }
   .left-main-side .shipping-step .step-circle-container {
     margin-right: 8px;
-  }
-  .left-main-side .shipping-step .connect-line {
-    width: 60%;
-    right: 130px;
   }
   .left-main-side .shipping-step .step-lebal-container {
     all: unset;
@@ -1424,22 +1418,13 @@ input[type="text"] {
     -ms-grid-column: 1;
     -ms-grid-column-span: 6;
     grid-column: 1/7;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
-  .page-control-btn .page-btn-container .page-before {
-    display: block;
+  .page-control-btn .page-btn-container .page-before-desk {
+    all: unset;
+    visibility: hidden;
   }
   .page-control-btn .page-btn-container .page-next {
-    width: 174px;
+    width: 50%;
   }
 }
 

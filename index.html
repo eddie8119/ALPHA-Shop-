@@ -65,24 +65,24 @@
         <div class="main-container">
           <div class="left-main-side">
             <div class="shipping-step-container">
-              <div class="shipping-step active">
+              <div class="shipping-step step-one active">
                 <div class="step-circle-container"></div>
                 <div class="step-lebal-container">寄送地址</div>
               </div>
-              <div class="shipping-step">
+              <span class="connect-line"></span>
+              <div class="shipping-step step-two">
                 <div class="step-circle-container"></div>
-                <span class="connect-line"></span>
                 <div class="step-lebal-container">運送方式</div>
               </div>
-              <div class="shipping-step">
+              <span class="connect-line"></span>
+              <div class="shipping-step step-three">
                 <div class="step-circle-container"></div>
-                <span class="connect-line"></span>
                 <div class="step-lebal-container">付款資訊</div>
               </div>
             </div>
             <div class="form-content">
               <form id="a-form" action="">
-                <div class="part">
+                <div class="part active">
                   <h2 class="mission-title">寄送地址</h2>
                   <div class="form-container">
                     <div class="form-row form-title">
@@ -146,18 +146,28 @@
                 </div>
                 <div class="part d-none">
                   <h2 class="mission-title">運送方式</h2>
-                  <div class="shipment-choice-container">
+
+                  <label
+                    for="normal"
+                    class="shipment-choice-container normalShipping"
+                    data-id="1"
+                  >
                     <input type="radio" name="shipping" id="normal" />
                     <span>標準運送</span>
                     <span>約3~7個工作天</span>
                     <span>免費</span>
-                  </div>
-                  <div class="shipment-choice-container">
-                    <input type="radio" name="shipping" id="normal" />
+                  </label>
+
+                  <label
+                    for="dhl"
+                    class="shipment-choice-container DHLShipping"
+                    data-id="2"
+                  >
+                    <input type="radio" name="shipping" id="dhl" />
                     <span>DHL貨運</span>
                     <span>48小時內送達</span>
                     <span>$500</span>
-                  </div>
+                  </label>
                 </div>
                 <div class="part d-none">
                   <h2 class="mission-title">付款資訊</h2>
@@ -206,54 +216,23 @@
           <div class="right-main-side">
             <div class="order-panel">
               <h4 class="mission-title">購物籃</h4>
-              <div class="product-item-container">
-                <img
-                  class="product-img"
-                  src="./src/images/product_one.png"
-                  alt="褲子產品-1"
-                />
-                <div class="product-calculate-panel" data-id="1">
-                  <span class="product-item-title">破壞補丁修身牛仔褲</span>
-                  <div class="calculate-container">
-                    <button class="number-button remove-num-btn">-</button>
-                    <span class="product_amount_total">0</span>
-                    <button class="number-button add-num-btn">+</button>
-                  </div>
-                  <span class="product-item-price">$3999</span>
-                </div>
-              </div>
-              <div class="product-item-container">
-                <img
-                  class="product-img"
-                  src="./src/images/product_two.png"
-                  alt="褲子產品-2"
-                />
-                <div class="product-calculate-panel" data-id="2">
-                  <span class="product-item-title">刷色直筒牛仔褲</span>
-                  <div class="calculate-container">
-                    <button class="number-button remove-num-btn">-</button>
-                    <span>0</span>
-                    <button class="number-button add-num-btn">+</button>
-                  </div>
-                  <span class="product-item-price">$1299</span>
-                </div>
-              </div>
-
+              <div class="products-list"></div>
               <div class="shipping-fee-container">
                 <span>運費</span>
-                <span>免費</span>
+                <span class="shipping-free">免費</span>
               </div>
               <div class="total-fee-container">
                 <span>小計</span>
-                <span>8888</span>
+                <span class="total-fee">0</span>
               </div>
             </div>
           </div>
         </div>
         <div class="page-control-btn">
           <div class="page-btn-container">
-            <button class="page-before">&larr;上一步</button>
-            <button class="page-next">下一步&rarr;</button>
+            <button class="page-btn page-before d-none">&larr;上一步</button>
+            <button class="page-btn page-before page-before-desk"></button>
+            <button class="page-btn page-next w-100">下一步&rarr;</button>
           </div>
         </div>
       </main>

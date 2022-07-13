@@ -26,10 +26,6 @@ $sizes: (
   }
 }
 
-/*桌機版面邊寬*/
-// %desktop-style-padding {
-//   padding: 0 165px;
-// }
 
 /*input-style*/
 %input-style {
@@ -119,4 +115,8 @@ $spacers: (
 
 .d-none {
   display: none;
+}
+
+.v-hidden {
+  visibility: hidden;
 }

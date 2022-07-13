@@ -679,6 +679,10 @@ input:invalid {
   display: none;
 }
 
+.v-hidden {
+  visibility: hidden;
+}
+
 header {
   width: 100%;
   height: 56px;

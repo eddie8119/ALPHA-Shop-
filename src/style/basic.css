@@ -9,7 +9,6 @@
 }
 
 /*數字迴圈*/
-/*桌機版面邊寬*/
 /*input-style*/
 /* 使用@each 產出css size設定 */
 .w-25 {
@@ -587,5 +586,9 @@
 
 .d-none {
   display: none;
+}
+
+.v-hidden {
+  visibility: hidden;
 }
 /*# sourceMappingURL=basic.css.map */
